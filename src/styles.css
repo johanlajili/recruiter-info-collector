@@ -1,0 +1,15 @@
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.tech-logo {
+    width: 100px;
+    height: 40px;
+    background: red;
+}
+.tech-logo.react {
+    transform: scale(1.3);
+}
