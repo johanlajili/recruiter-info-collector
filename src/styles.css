@@ -5,11 +5,25 @@ body,
     width: 100%;
 }
 
+.tech-logo, .london {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .tech-logo {
-    width: 100px;
+    margin: 2px;
+    width: 120px;
     height: 40px;
-    background: red;
+}
+h3.years-of-experience {
+    color: rgb(128, 42, 42);
 }
 .tech-logo.react {
-    transform: scale(1.3);
+    background-size: 100%;
+}
+
+.london {
+    width: 100px;
+    height: 60px;
 }
