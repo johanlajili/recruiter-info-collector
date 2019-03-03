@@ -8,6 +8,17 @@ import Johan from './johan.png';
 
 
 const AVATAR_SIZE = 80;
+const centerBackgroundImage = {
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+}
+const techLogo = {
+    ...centerBackgroundImage,
+    margin: 2,
+    width: 120,
+    height: 40,
+};
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -18,17 +29,20 @@ const useStyles = makeStyles(theme => ({
     panelCard: {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: 5
     },
     panelWelcome: {
         marginTop: 50,
     },
     panelButton: {
         marginTop: 50,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     card: {
         position: 'relative',
-        width: 400,
         textAlign: 'center',
         overflow: 'visible'
     },
@@ -38,6 +52,20 @@ const useStyles = makeStyles(theme => ({
     },
     hero: {
         height: 100,
+    },
+    reactLogo: {
+        ...techLogo,
+        backgroundSize: '100%'
+    },
+    angularLogo: {
+        ...techLogo
+    },
+    londonLogo: {
+        ...centerBackgroundImage,
+        width: '100%',
+    },
+    yearsOfExperience: {
+        color: 'rgb(128, 42, 42)',
     },
     label: {
         display: 'flex',
@@ -59,7 +87,6 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'flex-end'
     },
     welcomeText: {
-        width: 500,
         color: 'white',
         textAlign: 'center',
     }
@@ -72,7 +99,7 @@ const Home = props => {
                 container
                 direction="column"
                 justify="center"
-                alignItems="center"
+                alignItems="stretch"
             >
                 <Grid item className={classes.panelCard}>
                     <Card className={classes.card}>
@@ -89,9 +116,9 @@ const Home = props => {
                                 justify="space-between"
                                 alignItems="stretch"
                             >
-                                <Grid item container xs={3} direction="column" justify="space-between" alignItems="stretch">
+                                <Grid item container md={3} xs={3} direction="column" justify="space-between" alignItems="stretch">
                                         <Grid item xs>
-                                            <Typography variant="h3" className="years-of-experience">
+                                            <Typography variant="h3" className={classes.yearsOfExperience}>
                                                 8+
                                             </Typography>
                                         </Grid>
@@ -99,25 +126,22 @@ const Home = props => {
                                             years of experience
                                         </Grid>
                                 </Grid>
-                                <Grid item xs={6} container direction="column" alignItems="center" justify="flex-start">
-                                        <Grid item xs style={{backgroundImage: `url('${ReactLogo}')`}} className="tech-logo react">
+                                <Grid item md={6} xs={5} container direction="column" alignItems="center" justify="flex-start">
+                                        <Grid item xs style={{backgroundImage: `url('${ReactLogo}')`}} className={classes.reactLogo}>
                            
                                         </Grid>
-                                        <Grid item xs style={{backgroundImage: `url('${AngularLogo}')`}} className="tech-logo angular">
+                                        <Grid item xs style={{backgroundImage: `url('${AngularLogo}')`}} className={classes.angularLogo}>
                            
                                         </Grid>
                                     </Grid>
-                                <Grid item xs={3} container direction="column" alignItems="center" justify="center">
-                                    <Grid item xs>
-                                            <div
-                                                style={{backgroundImage: `url('${LondonLogo}')`}}
-                                                className="london"
-                                            />
-                                        </Grid>
-                                        <Grid item xs className={classes.label}>
-                                           Based in London
-                                        </Grid>
+                                <Grid item md={3} xs={3} container direction="column" alignItems="center" justify="center">
+                                    <Grid item xs  style={{backgroundImage: `url('${LondonLogo}')`}}
+                                                className={classes.londonLogo}>
                                     </Grid>
+                                    <Grid item xs className={classes.label}>
+                                        Based in London
+                                    </Grid>
+                                </Grid>
                             </Grid>
                         </CardContent>
                         <CardActions className={classes.actions}>

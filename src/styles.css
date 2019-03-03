@@ -4,26 +4,3 @@ body,
     height: 100%;
     width: 100%;
 }
-
-.tech-logo, .london {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.tech-logo {
-    margin: 2px;
-    width: 120px;
-    height: 40px;
-}
-h3.years-of-experience {
-    color: rgb(128, 42, 42);
-}
-.tech-logo.react {
-    background-size: 100%;
-}
-
-.london {
-    width: 100px;
-    height: 60px;
-}
